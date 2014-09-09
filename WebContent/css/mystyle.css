@@ -1,5 +1,14 @@
 .body {
-	background-color: #C9E3F3;
+	background-color: #43aed7;
+}
+
+.caixa{
+	border-radius: 12px;
+	background-color: #DEDEDE;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	-webkit-box-shadow: 0px 0px 4px 0px #f787878; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+            box-shadow: 0px 0px 4px 0px #787878;
 }
 
 .loginEspaco {
@@ -7,6 +16,10 @@
 	margin-top: 50px;
 	margin-bottom: 50px;
 	text-align: center;
+}
+
+.cadastro{
+	padding-right: 20px;
 }
 
 .centroTela{
@@ -17,4 +30,11 @@
 .icones{
 	margin-top: 7px;
 	margin-bottom: 7px;
+}
+
+.areaAddBichinho{
+	text-align: left;
+	margin: 10px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }

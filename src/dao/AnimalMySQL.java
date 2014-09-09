@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import control.Data;
-
 import model.Animal;
+import model.Dono;
 
 public class AnimalMySQL extends MySQL implements AnimalDAO{
 

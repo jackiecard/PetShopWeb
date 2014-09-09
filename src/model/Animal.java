@@ -1,6 +1,9 @@
 package model;
 
+import java.sql.SQLException;
 import java.util.Date;
+
+import dao.DonoMySQL;
 
 public class Animal {
 	private int id;
@@ -29,6 +32,11 @@ public class Animal {
 				"\nPorte: " + getPorte() +
 				"\nPelagem: " + getPelagem() + "\n";
 	}
+	public Dono findDono(int idDono) throws SQLException {
+		DonoMySQL don = new DonoMySQL();
+		return don.find(idDono);
+	}
+	
 	//GETTERS
 	public String getNome() {
 		return nome;
