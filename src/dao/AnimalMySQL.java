@@ -22,31 +22,29 @@ public class AnimalMySQL extends MySQL implements AnimalDAO{
 	
 	public void save(Animal g) throws SQLException {
 		if(g.getId() == 0) {
-			String insertSQL = "INSERT INTO animal(nome, dono_id, raca, pelagem, nascimento, porte, especie) "
-					+ "VALUES(?, ?, ?, ?, ?, ?, ?)";	
+			String insertSQL = "INSERT INTO animal(nome, dono_id, raca, pelagem, porte, especie) "
+					+ "VALUES(?, ?, ?, ?, ?, ?)";	
 			PreparedStatement preparedStatement = con.prepareStatement(insertSQL);
 			preparedStatement.setString(1, g.getNome());
 			preparedStatement.setInt(2, g.getDono());
 			preparedStatement.setString(3, g.getRaca());
 			preparedStatement.setString(4, g.getPelagem());
-			preparedStatement.setDate(5, new Date(g.getNascimento().getTime()));
-			preparedStatement.setString(6, g.getPorte());
-			preparedStatement.setString(7, g.getEspecie());
+			preparedStatement.setString(5, g.getPorte());
+			preparedStatement.setString(6, g.getEspecie());
 			
 			preparedStatement.executeUpdate();
 		} else {
 			String updateSQL = "UPDATE animal "
-					+ "SET nome=?, nascimento=?, dono_id=?, raca=?, pelagem=?, porte=?, especie=?"
+					+ "SET nome=?, dono_id=?, raca=?, pelagem=?, porte=?, especie=?"
 					+ "WHERE id = ?";	
 			PreparedStatement preparedStatement = con.prepareStatement(updateSQL);
 			preparedStatement.setString(1, g.getNome());
-			preparedStatement.setDate(2, new Date(g.getNascimento().getTime()));
-			preparedStatement.setInt(3, g.getDono());
-			preparedStatement.setString(4, g.getRaca());
-			preparedStatement.setString(5, g.getPelagem());
-			preparedStatement.setString(6, g.getPorte());
-			preparedStatement.setString(7, g.getEspecie());
-			preparedStatement.setInt(8, g.getId());
+			preparedStatement.setInt(2, g.getDono());
+			preparedStatement.setString(3, g.getRaca());
+			preparedStatement.setString(4, g.getPelagem());
+			preparedStatement.setString(5, g.getPorte());
+			preparedStatement.setString(6, g.getEspecie());
+			preparedStatement.setInt(7, g.getId());
 			preparedStatement.executeUpdate();
 		}
 	}
@@ -114,7 +112,6 @@ public class AnimalMySQL extends MySQL implements AnimalDAO{
 		Animal g = new Animal();
 		g.setId(rs.getInt("id"));
 		g.setNome(rs.getString("nome"));
-		g.setNascimento(rs.getDate("nascimento"));
 		g.setDono(rs.getInt("dono_id"));
 		g.setRaca(rs.getString("raca"));
 		g.setPelagem(rs.getString("pelagem"));

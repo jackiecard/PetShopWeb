@@ -17,17 +17,18 @@ public class DonoMySQL extends MySQL implements DonoDAO{
 	
 	public void save(Dono x) throws SQLException {
 		if(x.getId() == 0) {
-			String insertSQL = "INSERT INTO dono(nome, senha, telefone, endereco) "
-					+ "VALUES(?, ?, ?, ?)";	
+			String insertSQL = "INSERT INTO dono(nome, senha, telefone, endereco, email) "
+					+ "VALUES(?, ?, ?, ?, ?)";	
 			PreparedStatement preparedStatement = con.prepareStatement(insertSQL);
 			preparedStatement.setString(1, x.getNome());
 			preparedStatement.setString(2, x.getSenha());
 			preparedStatement.setString(3, x.getTelefone());
 			preparedStatement.setString(4, x.getEndereco());
+			preparedStatement.setString(5, x.getEmail());
 			preparedStatement.executeUpdate();
 		} else {
 			String updateSQL = "UPDATE dono "
-					+ "SET nome=?, senha=?, telefone=?, endereco=?"
+					+ "SET nome=?, senha=?, telefone=?, endereco=?, email=?"
 					+ "WHERE id = ?";	
 			PreparedStatement preparedStatement = con.prepareStatement(updateSQL);
 			preparedStatement.setString(1, x.getNome());
@@ -105,6 +106,7 @@ public class DonoMySQL extends MySQL implements DonoDAO{
 		x.setSenha(rs.getString("senha"));
 		x.setTelefone(rs.getString("telefone"));
 		x.setEndereco(rs.getString("endereco"));
+		x.setEmail(rs.getString("email"));
 		return x;
 	}
 }

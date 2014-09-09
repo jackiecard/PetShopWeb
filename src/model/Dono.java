@@ -4,14 +4,16 @@ import java.util.ArrayList;
 public class Dono {
 	private String nome;
 	private String senha;
+	private String email;
 	private String telefone;
 	private int id;
 	private String endereco;
 	private ArrayList<Animal> meusAnimais;
 	
-	public Dono(String nome, String senha, String telefone, String endereco){
+	public Dono(String nome, String email, String senha, String telefone, String endereco){
 		setSenha(senha);
 		setEndereco(endereco);
+		setEmail(email);
 		setNome(nome);
 		setTelefone(telefone);
 		meusAnimais = new ArrayList<>();
@@ -27,7 +29,6 @@ public class Dono {
 				"\nTelefone: " + getTelefone() +
 				"\nEndereço: " + getEndereco();
 	}
-	
 	// String de lista de animais
 	public String meusAnimaisToString(){
 		String srt = "";
@@ -41,7 +42,6 @@ public class Dono {
 		}
 		return srt;
 	}
-	
 	// Adiciona animais
 	public void addMeuAnimal(Animal g){
 		meusAnimais.add(g);
@@ -50,11 +50,11 @@ public class Dono {
 	public void removeMeuAnimal(Animal g){
 		meusAnimais.remove(g);
 	}
-	
 	// Verifica se Dono possue um animal
 	public boolean temAnimal(){
 		return !(meusAnimais.isEmpty());
 	}
+	
 	//GETTERS
 	public String getNome() {
 		return nome;
@@ -71,7 +71,10 @@ public class Dono {
 	public String getSenha() {
 		return senha;
 	}
-
+	public String getEmail() {
+		return email;
+	}
+	
 	//SETTERS
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -94,4 +97,8 @@ public class Dono {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 }
