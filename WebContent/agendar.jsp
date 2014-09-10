@@ -7,7 +7,7 @@
 		<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css">-->
 		<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Usuário - C&atildeopanhia PetShop</title>
+<title>Agendar Serviço - C&atildeopanhia PetShop</title>
 </head>
 <body class="body">
 
@@ -19,14 +19,31 @@
 				<img src ="imagens/topo.png" border="0">
 				<div class="areaAddBichinho">
 				<%
-					String idS = request.getParameter("id");
+					String nome, raca, pelagem, porte, especie;
+					
 				%>
-				<p><% %></p>
-					<div class="loginEspaco">
-					<a href="addBichinho.jsp">
-					<img src="imagens/add.png">
-					</a>
-					</div>
+					<label>Tipo:</label>
+					  <label class="radio-inline">
+					  <input type="radio" name="especie" id="inlineRadio1" value="option1"> Banho
+					</label>
+					<%especie=request.getParameter("especie");%>
+					<label class="radio-inline">
+					  <input type="radio" name="especie" id="inlineRadio2" value="option2"> Tosa
+					</label>
+					<%especie=request.getParameter("especie");%>
+					<br><br>
+					  
+					<%
+						
+				
+					%>
+						<div  class="loginEspaco">
+							  <img alt="Adicionar Animal" src="imagens/add.png">
+							  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  <img alt="Exluir Animal" src="imagens/excluir.png">
+							
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

@@ -7,7 +7,7 @@
 		<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css">-->
 		<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cadastro</title>
+<title>Cadastrar Bichinho - C&atildeopanhia PetShop</title>
 </head>
 <body class="body">
 
@@ -28,43 +28,46 @@
 					    <div class="col-sm-10">
 					      <input type="text" class="form-control" name="nome" id="inputEmail3" 
 					      	placeholder="Nome do bichinho">
-					      <%=nome=request.getParameter("nome")%>
+					      <%nome=request.getParameter("nome");%>
 					    </div>
 					  </div>
 					  
 					  <div class="form-group">
-					    <label for="inputEmail3" class="col-sm-2 control-label">Raça:</label>
+					    <label for="inputEmail3" class="col-sm-2 control-label">Raça:&nbsp;</label>
 					    <div class="col-sm-10">
 					      <input type="email" class="form-control" name="raca" id="inputEmail3" 
 					      placeholder="Raça">
-					    <%=raca=request.getParameter("raca")%>
+					    <%raca=request.getParameter("raca");%>
 					    </div>
-					  </div>
+					  </div>	
 					  
+					  </div>
+					<div  class="radios">
+					
 					<label>Espécie:</label>
 					  <label class="radio-inline">
 					  <input type="radio" name="especie" id="inlineRadio1" value="option1"> Cachorro
 					</label>
-					<%=especie=request.getParameter("especie")%>
+					<%especie=request.getParameter("especie");%>
 					<label class="radio-inline">
 					  <input type="radio" name="especie" id="inlineRadio2" value="option2"> Gato
 					</label>
-					<%=especie=request.getParameter("especie")%>
-					<br>
+					<%especie=request.getParameter("especie");%>
+					<br><br>
 					  
 					  <label>Porte:</label>
 					  <label class="radio-inline">
 					  <input type="radio" name="porte" id="inlineRadio1" value="option1"> Pequeno
 					</label>
-					<%=porte=request.getParameter("porte")%>
+					<%porte=request.getParameter("porte");%>
 					<label class="radio-inline">
 					  <input type="radio" name="porte" id="inlineRadio2" value="option2"> Médio
 					</label>
-					<%=porte=request.getParameter("porte")%>
+					<%porte=request.getParameter("porte");%>
 					<label class="radio-inline">
 					  <input type="radio" name="porte" id="inlineRadio3" value="option3"> Grande
 					</label>
-					<%=porte=request.getParameter("porte")%>
+					<%porte=request.getParameter("porte");%>
 					
 					<%
 						if(porte == "Pequeno"){
@@ -76,31 +79,29 @@
 						}
 					%>
 					
-					<br>
+					<br><br>
 					<label>Pelagem:</label>
 					  <label class="radio-inline">
 					  <input type="radio" name="pelagem" id="inlineRadio1" value="option1"> Curta
 					</label>
-					<%=pelagem=request.getParameter("pelagem")%>
+					<%pelagem=request.getParameter("pelagem");%>
 					<label class="radio-inline">
 					  <input type="radio" name="pelagem" id="inlineRadio2" value="option2"> Longa
 					</label>
-					<%=pelagem=request.getParameter("pelagem")%>
+					<%pelagem=request.getParameter("pelagem");%>
 					<label class="radio-inline">
 					  <input type="radio" name="pelagem" id="inlineRadio3" value="option3"> Dura
 					</label>
-					<%=pelagem=request.getParameter("pelagem")%>
-					
-					  
-					<%
+					<%pelagem=request.getParameter("pelagem");%>
+					</div>
 						
-				
-					%>
 						<div class="loginEspaco">
-							<button type="submit" class="btn btn-default">Cadastrar</button>
+							  <img alt="Adicionar Animal" src="imagens/add.png">
+							  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  <img alt="Exluir Animal" src="imagens/excluir.png">
+							
 						</div>
 					</form>
-				</div>
 			</div>
 		</div>
 	</div>

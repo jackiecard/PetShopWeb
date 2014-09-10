@@ -9,7 +9,7 @@
 		<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css">-->
 		<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cadastro</title>
+<title>Cadastro - C&atildeopanhia PetShop</title>
 </head>
 <body class="body">
 
@@ -29,11 +29,11 @@
 					<div class="cadastro">
 					<form class="form-horizontal" role="form">
 					<div class="form-group">
-					    <label for="inputEmail3" class="col-sm-2 control-label">Nome:</label>
+					    <label for="inputEmail3" class="col-sm-2 control-label">Username:</label>
 					    <div class="col-sm-10">
 					      <input type="text" class="form-control" name="nome" id="inputEmail3" 
-					      	placeholder="Nome Completo">
-					      <%=nome=request.getParameter("nome")%>
+					      	placeholder="Username">
+					      <%nome=request.getParameter("nome");%>
 					    </div>
 					  </div>
 					  <div class="form-group">
@@ -41,7 +41,7 @@
 					    <div class="col-sm-10">
 					      <input type="email" class="form-control" name="email" id="inputEmail3" 
 					      placeholder="@">
-					    <%=email=request.getParameter("email")%>
+					    <%email=request.getParameter("email");%>
 					    </div>
 					  </div>
 					  <div class="form-group">
@@ -49,14 +49,14 @@
 					    <div class="col-sm-10">
 					      <input type="password" class="form-control" name="senha" id="inputPassword3" 
 					      placeholder="Password">
-					    	<%=senha=request.getParameter("senha")%>
+					    	<%senha=request.getParameter("senha");%>
 					    </div>
 					  </div>
 						<div class="form-group">
 					    <label for="inputEmail3" class="col-sm-2 control-label">Telefone:</label>
 					    <div class="col-sm-10">
 					      <input type="text" class="form-control" name="telefone" id="inputEmail3" placeholder="Telefone">
-					      <%=telefone=request.getParameter("telefone")%>
+					      <%telefone=request.getParameter("telefone");%>
 					    </div>
 					  </div>
 					  <div class="form-group">
@@ -64,7 +64,7 @@
 					    <div class="col-sm-10">
 					      <input type="text" class="form-control" name="endereco" id="inputEmail3" 
 					      placeholder="Rua, Bairro, CEP, Cidade">
-					   	<%=endereco=request.getParameter("endereco")%>
+					   	<%endereco=request.getParameter("endereco");%>
 					    </div>
 					  </div>
 					 </div>
@@ -80,7 +80,12 @@
 							donoMy.save(dono);
 						}
 					%>
-						<button type="submit" class="btn btn-default">Cadastrar</button>
+						<div  class="loginEspaco">
+							  <img alt="Adicionar Animal" src="imagens/ok.png">
+							  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  <img alt="Exluir Animal" src="imagens/excluir.png">
+							
+						</div>
 					</form>
 				</div>
 			</div>

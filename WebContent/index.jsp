@@ -1,5 +1,3 @@
-<%@page import="javax.swing.JOptionPane"%>
-<%@page import="javax.swing.JDialog"%>
 <%@page import="model.Dono"%>
 <%@page import="dao.DonoMySQL"%>
 <%@page import="dao.MySQL"%>
@@ -11,9 +9,7 @@
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 		<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css">-->
 		<link rel="stylesheet" type="text/css" href="css/mystyle.css">
-		<script type="text/javascript">
-	    	var message = alert("O Login e a Senha não conferem!");
-		</script>
+		<title>C&atildeopanhia PetShop</title>
 	</head>
 	<body class="body">
 		<div class="row">
@@ -23,20 +19,20 @@
 					<div class="centroTela">
 						<img src ="imagens/topo.png" border="0">
 						<div class="loginEspaco">
-						<% String login = "", senha = ""; 
+						<% String login = null, senha = null; 
 							int idDono = -1;%>
 							<!-- Login -->
 							<div class="input-group input-group-lg">
 								<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
 								<input type="text" name="login" class="form-control" placeholder="Login">
-								<%=login = request.getParameter(login)%>
+								<%login = request.getParameter(login);%>
 							</div>
 							<br>
 							<!-- Senha -->
 							<div class="input-group input-group-lg">
 								<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
 								<input type="password" name = "senha" id="exampleInputPassword1" class="form-control" placeholder="Senha">
-								<%=senha = request.getParameter(senha)%>
+								<%senha = request.getParameter(senha);%>
 							</div>
 							<%
 								String idS = "";
@@ -64,12 +60,3 @@
 		</div>
 	</body>
 </html>
-<%-- 	<%
-					AnimalMySQL animal = new AnimalMySQL();
-					List<Animal> animals = animal.list(); 
-					for (Animal anim : animals) {
-				%>
-					<p class="my-class"><%=anim.toString() %></p>
-				<%
-					}
-				%> --%>
