@@ -21,7 +21,7 @@ public class AgendamentoMySQL extends MySQL implements AgendamentoDAO {
 				PreparedStatement preparedStatement = con.prepareStatement(insertSQL);
 				preparedStatement.setDate(1, new Date(x.getData().getTime()));
 				preparedStatement.setString(2, x.getTipo());
-				preparedStatement.setFloat(3, x.getValor());
+				preparedStatement.setDouble(3, x.getValor());
 				preparedStatement.setInt(4, x.getAnimal_id());
 				preparedStatement.executeUpdate();
 			} else {
@@ -31,7 +31,7 @@ public class AgendamentoMySQL extends MySQL implements AgendamentoDAO {
 				PreparedStatement preparedStatement = con.prepareStatement(updateSQL);
 				preparedStatement.setDate(1, new Date(x.getData().getTime()));
 				preparedStatement.setString(2, x.getTipo());
-				preparedStatement.setFloat(3, x.getValor());
+				preparedStatement.setDouble(3, x.getValor());
 				preparedStatement.setInt(4, x.getAnimal_id());
 				preparedStatement.setInt(5, x.getId());
 				preparedStatement.executeUpdate();
@@ -103,7 +103,7 @@ public class AgendamentoMySQL extends MySQL implements AgendamentoDAO {
 			x.setId(rs.getInt("id"));
 			x.setData(rs.getDate("data_agendamento"));
 			x.setTipo(rs.getString("tipo"));
-			x.setValor(rs.getFloat("valor"));
+			x.setValor(rs.getDouble("valor"));
 			x.setAnimal_id(rs.getInt("animal_id"));
 			return x;
 		}

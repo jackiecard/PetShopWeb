@@ -105,7 +105,8 @@
 						  /* Valor para TaxiDog */
 						  valor += 10;
 						  
-							session.setAttribute("valor", valor);
+						  	String valorStr = "" + valor;
+						  	session.setAttribute("valor", valorStr);
 							valor = Double.parseDouble("" + session.getAttribute("valor"));
 
 					  %>
