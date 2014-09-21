@@ -15,29 +15,28 @@
 	<div class="col-md-offset-3 col-md-6">
 	<br>
 		<div class="caixa">
+			<div class="nav">
+			 <a href="index.jsp">
+			<img alt="" src="imagens/logout.png" class="navimg">
+			</a>
+			</div>		
 			<div class="centroTela">
-				<img src ="imagens/topo.png" border="0">
+				<img src ="imagens/caopanhia.png" class="topo" border="0">
 				<div class="areaAddBichinho">
-				<%
-					String nome, raca, pelagem, porte, especie;
-					
-				%>
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" METHOD=POST ACTION="addsucesso.jsp" role="form">
 					<div class="form-group">
 					    <label for="inputEmail3" class="col-sm-2 control-label">Nome:</label>
 					    <div class="col-sm-10">
 					      <input type="text" class="form-control" name="nome" id="inputEmail3" 
 					      	placeholder="Nome do bichinho">
-					      <%nome=request.getParameter("nome");%>
 					    </div>
 					  </div>
 					  
 					  <div class="form-group">
 					    <label for="inputEmail3" class="col-sm-2 control-label">Raça:&nbsp;</label>
 					    <div class="col-sm-10">
-					      <input type="email" class="form-control" name="raca" id="inputEmail3" 
+					      <input type="text" class="form-control" name="raca" id="inputEmail3" 
 					      placeholder="Raça">
-					    <%raca=request.getParameter("raca");%>
 					    </div>
 					  </div>	
 					  
@@ -46,64 +45,46 @@
 					
 					<label>Espécie:</label>
 					  <label class="radio-inline">
-					  <input type="radio" name="especie" id="inlineRadio1" value="option1"> Cachorro
+					  <input type="radio" name="especie" id="inlineRadio1" value="Cachorro"> Cachorro
 					</label>
-					<%especie=request.getParameter("especie");%>
 					<label class="radio-inline">
-					  <input type="radio" name="especie" id="inlineRadio2" value="option2"> Gato
+					  <input type="radio" name="especie" id="inlineRadio2" value="Gato"> Gato
 					</label>
-					<%especie=request.getParameter("especie");%>
 					<br><br>
 					  
 					  <label>Porte:</label>
 					  <label class="radio-inline">
-					  <input type="radio" name="porte" id="inlineRadio1" value="option1"> Pequeno
+					  <input type="radio" name="porte" id="inlineRadio1" value="Pequeno"> Pequeno
 					</label>
-					<%porte=request.getParameter("porte");%>
 					<label class="radio-inline">
-					  <input type="radio" name="porte" id="inlineRadio2" value="option2"> Médio
+					  <input type="radio" name="porte" id="inlineRadio2" value="Medio"> Medio
 					</label>
-					<%porte=request.getParameter("porte");%>
 					<label class="radio-inline">
-					  <input type="radio" name="porte" id="inlineRadio3" value="option3"> Grande
+					  <input type="radio" name="porte" id="inlineRadio3" value="Grande"> Grande
 					</label>
-					<%porte=request.getParameter("porte");%>
-					
-					<%
-						if(porte == "Pequeno"){
-							porte = "p";
-						}else if(porte == "Médio"){
-							porte = "m";
-						}else if(porte == "Grande"){
-							porte = "g";
-						}
-					%>
 					
 					<br><br>
 					<label>Pelagem:</label>
 					  <label class="radio-inline">
-					  <input type="radio" name="pelagem" id="inlineRadio1" value="option1"> Curta
+					  <input type="radio" name="pelagem" id="inlineRadio1" value="Curta"> Curta
 					</label>
-					<%pelagem=request.getParameter("pelagem");%>
 					<label class="radio-inline">
-					  <input type="radio" name="pelagem" id="inlineRadio2" value="option2"> Longa
+					  <input type="radio" name="pelagem" id="inlineRadio2" value="Longa"> Longa
 					</label>
-					<%pelagem=request.getParameter("pelagem");%>
 					<label class="radio-inline">
-					  <input type="radio" name="pelagem" id="inlineRadio3" value="option3"> Dura
+					  <input type="radio" name="pelagem" id="inlineRadio3" value="Dura"> Dura
 					</label>
-					<%pelagem=request.getParameter("pelagem");%>
 					</div>
 						
 						<div class="loginEspaco">
-							  <img alt="Adicionar Animal" src="imagens/add.png">
+							  <button type="submit" type="button" class="botaoAdd">&nbsp;</button>
 							  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <img alt="Exluir Animal" src="imagens/excluir.png">
-							
+							  <button type="button" class="botaoExcluir">&nbsp;</button>
 						</div>
 					</form>
 			</div>
 		</div>
+		<br>
 	</div>
 </div>
 

@@ -31,7 +31,6 @@ public class AnimalMySQL extends MySQL implements AnimalDAO{
 			preparedStatement.setString(4, g.getPelagem());
 			preparedStatement.setString(5, g.getPorte());
 			preparedStatement.setString(6, g.getEspecie());
-			
 			preparedStatement.executeUpdate();
 		} else {
 			String updateSQL = "UPDATE animal "
@@ -106,6 +105,19 @@ public class AnimalMySQL extends MySQL implements AnimalDAO{
 			return populateAnimal(rs);
 		}
 		return null;
+	}
+	
+
+	public ArrayList<Animal> procuraAnimais(int idDono) throws SQLException {
+		String selectSQL = "SELECT * FROM animal WHERE ? = dono_id";
+		PreparedStatement preparedStatement = con.prepareStatement(selectSQL);
+		preparedStatement.setInt(1, idDono);
+		ResultSet rs = preparedStatement.executeQuery();
+		ArrayList<Animal> lh = new ArrayList<>();
+		while(rs.next()) {
+			lh.add(populateAnimal(rs));
+		}
+		return lh;
 	}
 	
 	private Animal populateAnimal(ResultSet rs) throws SQLException {

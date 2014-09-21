@@ -99,25 +99,6 @@ public class DonoMySQL extends MySQL implements DonoDAO{
 		return null;
 	}
 	
-	public ArrayList<Animal> procuraAnimais(int idDono) throws SQLException {
-		String selectSQL = "SELECT * FROM animal WHERE ? == dono_id";
-		PreparedStatement preparedStatement = con.prepareStatement(selectSQL);
-		preparedStatement.setInt(1, idDono);
-		ResultSet rs = preparedStatement.executeQuery();
-		ArrayList<Animal> lh = new ArrayList<>();
-		while(rs.next()) {
-			Animal an = new Animal();
-			an.setId(rs.getInt("id"));
-			an.setDono_id(idDono);
-			an.setEspecie(rs.getString("especie"));
-			an.setNome("nome");
-			an.setPelagem("pelagem");
-			an.setPorte("porte");
-			an.setRaca("raca");
-			lh.add(an);
-		}
-		return lh;
-	}
 	
 	public Dono find(int id) throws SQLException {
 		String selectSQL = "SELECT * FROM dono WHERE id = ?";
