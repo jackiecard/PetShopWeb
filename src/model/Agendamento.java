@@ -8,7 +8,7 @@ import dao.AnimalMySQL;
 public class Agendamento {
 
 	private Date data;
-	private float valor;
+	private double valor;
 	private int id;
 	private int animal_id;
 	private String tipo;
@@ -49,11 +49,11 @@ public class Agendamento {
 		this.data = data;
 	}
 
-	public float getValor() {
+	public double getValor() {
 		return valor;
 	}
 
-	public void setValor(float valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
 	}
 

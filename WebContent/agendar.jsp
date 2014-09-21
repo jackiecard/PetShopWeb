@@ -32,7 +32,9 @@
 				<%
 					String id = request.getParameter( "id" );
 					session.setAttribute("id", id);
+					id = "" + session.getAttribute("id");
 					int idAnimal = Integer.parseInt("" + session.getAttribute("id"));
+					
 					AnimalMySQL banco = new AnimalMySQL();
 					Animal animal = banco.find(idAnimal);
 					DonoMySQL bancoDono = new DonoMySQL();
@@ -102,6 +104,10 @@
 						  }
 						  /* Valor para TaxiDog */
 						  valor += 10;
+						  
+							session.setAttribute("valor", valor);
+							valor = Double.parseDouble("" + session.getAttribute("valor"));
+
 					  %>
 
 					  <h4>R$<%=valor%></h4>
